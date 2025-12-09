@@ -5,18 +5,22 @@ import models.Node;
 public class Stack<T> {
 
     private Node<T> top;
+    private int size;
 
     public Stack() {
         this.top = null;
+        this.size = 1;
     }
 
     public void push(T data) {
         Node<T> newNode = new Node<T>(data);
         newNode.setNext(top);
         top = newNode;
+        size++;
     }
 
     public T pop() {
+        size--;
         if (isEmpty()) {
             return null;
         }
@@ -37,7 +41,7 @@ public class Stack<T> {
     }
 
     public int size() {
-        if (isEmpty()) {
+        /**if (isEmpty()) {
             return 0;
         }
         int count = 1;
@@ -47,6 +51,8 @@ public class Stack<T> {
             count++;
         }
         return count;
+        **/
+       return size;
     }
 
     public void pritnAllNodes() {

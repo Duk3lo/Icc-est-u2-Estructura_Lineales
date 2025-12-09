@@ -1,18 +1,28 @@
-## Getting Started
+# Stack con Lista Enlazada
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Proyecto simple que implementa una **pila (Stack)** usando una **lista
+enlazada** en Java.
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+-   push(T data): Inserta un elemento en la cima.
+-   pop(): Quita y devuelve el elemento de la cima.
+-   peek(): Devuelve el elemento de la cima sin quitarlo.
+-   isEmpty(): Verifica si la pila está vacía.
+-   size(): Devuelve la cantidad de nodos en la pila.
+-   printAllNodes(): Muestra todos los elementos de la pila.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Ejemplo de uso
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    Stack<String> s = new Stack<>();
+    s.push("A");
+    s.push("B");
+    s.push("C");
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    System.out.println(s.size());  // 3
+    System.out.println(s.pop());   // C
+    s.printAllNodes();             // Cima -> B -> A -> FIN
 
-## Dependency Management
+## Nombre
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+-   Joshue Avecillas
