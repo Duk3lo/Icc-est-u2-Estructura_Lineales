@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
+import controllers.Stack;
 import models.Node;
 import models.Person;
 
@@ -16,5 +14,21 @@ public class App {
         nodeP.setNext(nodeD);
 
         System.out.println(nodeJ.toString());
+
+        runStackExample();
+        
+    }
+
+    public static void runStackExample(){
+        Stack<Person> persons = new Stack<Person>();
+        persons.push(new Person("Juan", 30));
+        persons.push(new Person("Maria", 35));
+        persons.push(new Person("Pepito", 31));
+        persons.push(new Person("Diego", 25));
+        System.out.println("Size" + persons.size());
+        persons.pritnAllNodes();
+        System.out.println(persons.pop());
+        System.out.println("Size=" + persons.size());
+        persons.pritnAllNodes();
     }
 }
