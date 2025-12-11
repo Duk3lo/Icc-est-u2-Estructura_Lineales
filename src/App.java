@@ -1,3 +1,5 @@
+import controllers.ListaEnlazada;
+import controllers.Queue;
 import controllers.Stack;
 import models.Node;
 import models.Person;
@@ -15,11 +17,14 @@ public class App {
 
         System.out.println(nodeJ.toString());
 
-        runStackExample();
-        
+        System.out.println("-----------------------");
+        // runStackExample();
+        // runStackExample();
+        runLinkedListExample();
+
     }
 
-    public static void runStackExample(){
+    public static void runStackExample() {
         Stack<Person> persons = new Stack<Person>();
         persons.push(new Person("Juan", 30));
         persons.push(new Person("Maria", 35));
@@ -31,4 +36,37 @@ public class App {
         System.out.println("Size=" + persons.size());
         persons.pritnAllNodes();
     }
+
+    public static void runQueueExample() {
+        Queue<Person> persons = new Queue<Person>();
+        persons.enqueue(new Person("Juan", 30));
+        persons.enqueue(new Person("Maria", 35));
+        persons.enqueue(new Person("Pepito", 32));
+        persons.enqueue(new Person("Diego", 31));
+        System.out.println("Size=" + persons.size());
+        persons.pritnAllNodes();
+        System.out.println(persons.dequeue());
+        System.out.println("Primera: " + persons.getFirst());
+        System.out.println("Ultima: " + persons.getLast());
+        System.out.println("Size=" + persons.size());
+        persons.pritnAllNodes();
+    }
+
+    public static void runLinkedListExample() {
+        ListaEnlazada<Person> persons = new ListaEnlazada<Person>();
+        persons.append(new Person("Juan", 30));
+        persons.append(new Person("Maria", 35));
+        persons.append(new Person("Pepito", 32));
+        persons.append(new Person("Diego", 31));
+        System.out.println("Size=" + persons.size());
+        persons.printAllNodes();
+        persons.deleteNode(new Person("Pepito", 32));
+        persons.printAllNodes();
+        persons.deleteFirst();
+        persons.printAllNodes();
+        persons.deleteLast();
+        persons.printAllNodes();
+        System.out.println("Size=" + persons.size());
+    }
+
 }

@@ -25,8 +25,27 @@ public class Person {
         this.age = age;
     }
 
-     @Override
+    @Override
     public String toString() {
-        return name + " (" + age + ")";
+        return "Person [nombre: " + name + ", edad " + age + "]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        
+        Person other = (Person) obj;
+
+        return this.age == other.age &&
+               this.name.equals(other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
     }
 }
